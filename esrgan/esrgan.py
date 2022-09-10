@@ -73,14 +73,14 @@ optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=opt.lr, betas=(opt
 Tensor = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.Tensor
 
 train_dataloader = DataLoader(
-    ImageDataset(f"../data/{opt.train_data}", hr_shape=hr_shape),
+    ImageDataset(f"Image-Super-Resolution/data/{opt.train_data}", hr_shape=hr_shape),
     batch_size=opt.batch_size,
     shuffle=True,
     num_workers=opt.n_cpu,
 )
 
 test_dataloader = DataLoader(
-    ImageDataset(f"../data/{opt.test_data}", hr_shape=hr_shape),
+    ImageDataset(f"Image-Super-Resolution/data/{opt.test_data}", hr_shape=hr_shape),
     batch_size=opt.batch_size,
     shuffle=True,
     num_workers=opt.n_cpu,
